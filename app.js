@@ -127,11 +127,17 @@ document.addEventListener('DOMContentLoaded', function() {
     case 'login':
       initializeLoginPage();
       break;
+    case 'register':
+      initializeRegisterPage();
+      break;
     case 'account':
       initializeAccountPage();
       break;
     case 'product-detail':
       initializeProductDetailPage();
+      break;
+    case 'admin-dashboard':
+      initializeAdminDashboard();
       break;
   }
   
@@ -147,6 +153,25 @@ function getCurrentPage() {
 
 function initializeHomePage() {
   loadFeaturedProducts();
+  checkUserAuthentication();
+}
+
+function initializeRegisterPage() {
+  // Registration page specific initialization if needed
+}
+
+function initializeAdminDashboard() {
+  // Admin dashboard specific initialization if needed
+}
+
+// Authentication functions
+function checkUserAuthentication() {
+  const currentUser = JSON.parse(localStorage.getItem('currentUser') || '{}');
+  const adminLink = document.getElementById('adminLink');
+  
+  if (currentUser.userType === 'admin' && adminLink) {
+    adminLink.style.display = 'block';
+  }
 }
 
 function initializeProductsPage() {
@@ -631,3 +656,88 @@ function createProductDetailHTML(product) {
     </div>
   `;
 }
+
+// Initialize sample data if not exists
+function initializeSampleData() {
+  // Initialize sample inventory data for admin dashboard
+  if (!localStorage.getItem('inventory')) {
+    const sampleInventory = [
+      {
+        id: 1,
+        name: "Fresh Bananas (4 pieces)",
+        category: "fruits",
+        price: 26,
+        stock: 15,
+        minStock: 10,
+        description: "Fresh, ripe bananas perfect for snacking or baking"
+      },
+      {
+        id: 2,
+        name: "Organic Milk (1/2 litre)",
+        category: "dairy",
+        price: 33,
+        stock: 8,
+        minStock: 15,
+        description: "Fresh organic whole milk"
+      },
+      {
+        id: 3,
+        name: "Chicken Breast (1 kg)",
+        category: "meat",
+        price: 295,
+        stock: 12,
+        minStock: 8,
+        description: "Fresh boneless, skinless chicken breast"
+      },
+      {
+        id: 4,
+        name: "Whole Wheat Bread (1 packet)",
+        category: "pantry",
+        price: 50,
+        stock: 22,
+        minStock: 5,
+        description: "Freshly baked whole wheat bread loaf"
+      },
+      {
+        id: 5,
+        name: "Fresh Apples (1 kg)",
+        category: "fruits",
+        price: 80,
+        stock: 18,
+        minStock: 10,
+        description: "Crisp Honeycrisp apples"
+      },
+      {
+        id: 6,
+        name: "Greek Yogurt (1 litre)",
+        category: "dairy",
+        price: 495,
+        stock: 25,
+        minStock: 8,
+        description: "Plain Greek yogurt"
+      },
+      {
+        id: 7,
+        name: "Fresh Spinach (1 bunch)",
+        category: "fruits",
+        price: 36,
+        stock: 20,
+        minStock: 12,
+        description: "Fresh baby spinach leaves"
+      },
+      {
+        id: 8,
+        name: "Salmon Fillet (300 g)",
+        category: "meat",
+        price: 300,
+        stock: 6,
+        minStock: 10,
+        description: "Fresh Atlantic salmon fillet"
+      }
+    ];
+    localStorage.setItem('inventory', JSON.stringify(sampleInventory));
+  }
+}
+
+// Initialize sample data when the app loads
+initializeSampleData();

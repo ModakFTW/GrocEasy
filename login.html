@@ -22,7 +22,8 @@
                     <a href="cart.html" class="nav__cart">
                         Cart <span class="cart-count">4</span>
                     </a>
-                    <a href="login.html" class="nav__account active">Account</a>
+                    <a href="register.html">Register</a>
+                    <a href="login.html" class="nav__account active">Login</a>
                 </div>
                 <div class="nav__mobile-toggle">
                     <span></span>
@@ -40,22 +41,30 @@
                 <div class="card">
                     <div class="card__body">
                         <h2>Sign In to Your Account</h2>
-                        <p class="text-secondary">Welcome back, John!</p>
+                        <p class="text-secondary">Welcome back! Please sign in to continue.</p>
                         
                         <form id="login-form">
                             <div class="form-group">
                                 <label class="form-label">Email</label>
-                                <input type="email" class="form-control" value="john@example.com" required>
+                                <input type="email" id="loginEmail" class="form-control" placeholder="Enter your email" required>
                             </div>
                             <div class="form-group">
                                 <label class="form-label">Password</label>
-                                <input type="password" class="form-control" placeholder="Enter your password" required>
+                                <input type="password" id="loginPassword" class="form-control" placeholder="Enter your password" required>
+                            </div>
+                            <div class="form-group">
+                                <label class="form-label">Account Type</label>
+                                <select id="loginUserType" class="form-control" required>
+                                    <option value="">Select Account Type</option>
+                                    <option value="customer">Customer</option>
+                                    <option value="admin">Store Admin</option>
+                                </select>
                             </div>
                             <button type="submit" class="btn btn--primary btn--full-width">Sign In</button>
                         </form>
 
                         <div class="auth-links">
-                            <a href="account.html">View Account</a>
+                            <p class="text-secondary">Don't have an account? <a href="register.html" class="text-primary">Create one here</a></p>
                         </div>
                     </div>
                 </div>
@@ -91,5 +100,40 @@
     </footer>
 
     <script src="app.js"></script>
+    <script>
+        // Login form handling
+        document.getElementById('login-form').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            const email = document.getElementById('loginEmail').value;
+            const password = document.getElementById('loginPassword').value;
+            const userType = document.getElementById('loginUserType').value;
+            
+            // Get stored users
+            const users = JSON.parse(localStorage.getItem('users') || '[]');
+            
+            // Find matching user
+            const user = users.find(u => 
+                u.email === email && 
+                u.password === password && 
+                u.userType === userType
+            );
+            
+            if (user) {
+                // Store current user session
+                localStorage.setItem('currentUser', JSON.stringify(user));
+                
+                if (userType === 'admin') {
+                    alert('Welcome, Admin! Redirecting to dashboard...');
+                    window.location.href = 'admin-dashboard.html';
+                } else {
+                    alert('Welcome back! Redirecting to your account...');
+                    window.location.href = 'account.html';
+                }
+            } else {
+                alert('Invalid credentials or account type. Please try again.');
+            }
+        });
+    </script>
 </body>
 </html>

@@ -861,7 +861,10 @@ select.form-control {
 
 /* Hero section */
 .hero {
-  background: var(--color-bg-3);
+  background: var(--color-bg-3) url('images/categories/grocery-list-1024x536.jpg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
   padding: var(--space-32) 0;
   text-align: center;
 }
@@ -1391,6 +1394,34 @@ select.form-control {
   font-size: var(--font-size-sm);
 }
 
+.order-contact {
+  display: flex;
+  align-items: center;
+  gap: var(--space-8);
+  margin-top: var(--space-8);
+  padding-top: var(--space-8);
+  border-top: 1px solid var(--color-card-border-inner);
+}
+
+.contact-label {
+  font-size: var(--font-size-sm);
+  color: var(--color-text-secondary);
+  font-weight: var(--font-weight-medium);
+}
+
+.contact-phone {
+  color: var(--color-primary);
+  text-decoration: none;
+  font-size: var(--font-size-sm);
+  font-weight: var(--font-weight-medium);
+  transition: color var(--duration-fast);
+}
+
+.contact-phone:hover {
+  color: var(--color-primary-hover);
+  text-decoration: underline;
+}
+
 /* Footer */
 .footer {
   background: var(--brand-additional);
@@ -1662,4 +1693,245 @@ select.form-control {
 
 .product-card__clickable:hover {
   opacity: 0.8;
+}
+
+/* Admin Dashboard Styles */
+.dashboard-stats {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: var(--space-20);
+  margin-bottom: var(--space-32);
+}
+
+.stat-card {
+  background: var(--color-surface);
+  border: 1px solid var(--color-card-border);
+  border-radius: var(--radius-lg);
+  padding: var(--space-24);
+  display: flex;
+  align-items: center;
+  gap: var(--space-16);
+  transition: all var(--duration-normal) var(--ease-standard);
+}
+
+.stat-card:hover {
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-md);
+}
+
+.stat-icon {
+  font-size: 48px;
+  width: 60px;
+  height: 60px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--color-bg-1);
+  border-radius: var(--radius-base);
+}
+
+.stat-content h3 {
+  font-size: var(--font-size-2xl);
+  font-weight: var(--font-weight-bold);
+  color: var(--color-text);
+  margin: 0 0 var(--space-4) 0;
+}
+
+.stat-content p {
+  color: var(--color-text-secondary);
+  margin: 0;
+  font-size: var(--font-size-sm);
+}
+
+.section-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: var(--space-24);
+  flex-wrap: wrap;
+  gap: var(--space-16);
+}
+
+.section-header h2 {
+  margin: 0;
+}
+
+.inventory-section {
+  background: var(--color-surface);
+  border-radius: var(--radius-lg);
+  border: 1px solid var(--color-card-border);
+  padding: var(--space-24);
+}
+
+.inventory-table-container {
+  overflow-x: auto;
+  margin-top: var(--space-20);
+}
+
+.inventory-table {
+  width: 100%;
+  border-collapse: collapse;
+  background: var(--color-surface);
+}
+
+.inventory-table th,
+.inventory-table td {
+  padding: var(--space-12) var(--space-16);
+  text-align: left;
+  border-bottom: 1px solid var(--color-card-border-inner);
+}
+
+.inventory-table th {
+  background: var(--color-bg-1);
+  font-weight: var(--font-weight-semibold);
+  color: var(--color-text);
+  position: sticky;
+  top: 0;
+}
+
+.inventory-table tr:hover {
+  background: var(--color-bg-1);
+}
+
+.product-info strong {
+  display: block;
+  margin-bottom: var(--space-4);
+}
+
+.category-badge {
+  padding: var(--space-4) var(--space-8);
+  border-radius: var(--radius-base);
+  font-size: var(--font-size-sm);
+  font-weight: var(--font-weight-medium);
+  text-transform: capitalize;
+}
+
+.category-fruits {
+  background: var(--color-bg-7);
+  color: var(--color-success);
+}
+
+.category-dairy {
+  background: var(--color-bg-1);
+  color: var(--brand-primary);
+}
+
+.category-meat {
+  background: var(--color-bg-4);
+  color: var(--color-error);
+}
+
+.category-pantry {
+  background: var(--color-bg-6);
+  color: var(--color-warning);
+}
+
+.store-info {
+  display: flex;
+  align-items: center;
+  gap: var(--space-12);
+}
+
+/* Modal Styles */
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 1000;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+}
+
+.modal-content {
+  background-color: var(--color-surface);
+  margin: 5% auto;
+  border-radius: var(--radius-lg);
+  width: 90%;
+  max-width: 600px;
+  max-height: 90vh;
+  overflow-y: auto;
+  box-shadow: var(--shadow-lg);
+}
+
+.modal-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: var(--space-20) var(--space-24);
+  border-bottom: 1px solid var(--color-card-border-inner);
+}
+
+.modal-header h3 {
+  margin: 0;
+  color: var(--color-text);
+}
+
+.close {
+  font-size: 28px;
+  font-weight: bold;
+  cursor: pointer;
+  color: var(--color-text-secondary);
+  transition: color var(--duration-fast);
+}
+
+.close:hover {
+  color: var(--color-text);
+}
+
+.modal-body {
+  padding: var(--space-24);
+}
+
+.modal-actions {
+  display: flex;
+  gap: var(--space-12);
+  justify-content: flex-end;
+  margin-top: var(--space-24);
+}
+
+/* Checkbox Styles */
+.checkbox-label {
+  display: flex;
+  align-items: flex-start;
+  gap: var(--space-8);
+  cursor: pointer;
+  font-size: var(--font-size-sm);
+  line-height: 1.4;
+}
+
+.checkbox-label input[type="checkbox"] {
+  margin: 0;
+  flex-shrink: 0;
+}
+
+/* Responsive Admin Dashboard */
+@media (max-width: 768px) {
+  .dashboard-stats {
+    grid-template-columns: 1fr;
+  }
+  
+  .section-header {
+    flex-direction: column;
+    align-items: stretch;
+  }
+  
+  .inventory-table-container {
+    font-size: var(--font-size-sm);
+  }
+  
+  .inventory-table th,
+  .inventory-table td {
+    padding: var(--space-8) var(--space-12);
+  }
+  
+  .modal-content {
+    margin: 2% auto;
+    width: 95%;
+  }
+  
+  .modal-actions {
+    flex-direction: column;
+  }
 }
