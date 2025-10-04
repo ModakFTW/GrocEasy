@@ -109,7 +109,23 @@
             const password = document.getElementById('loginPassword').value;
             const userType = document.getElementById('loginUserType').value;
             
-            // Get stored users
+            // Hardcoded admin credentials for demo
+            if (email === 'groceasy@easygrocy' && password === '1234567890' && userType === 'admin') {
+                const adminUser = {
+                    email: 'groceasy@easygrocy',
+                    userType: 'admin',
+                    name: 'Admin User',
+                    storeId: 'Store-001'
+                };
+                
+                // Store current user session
+                localStorage.setItem('currentUser', JSON.stringify(adminUser));
+                alert('Welcome, Admin! Redirecting to dashboard...');
+                window.location.href = 'admin-dashboard.html';
+                return;
+            }
+            
+            // Get stored users for regular login
             const users = JSON.parse(localStorage.getItem('users') || '[]');
             
             // Find matching user
