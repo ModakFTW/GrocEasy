@@ -4,7 +4,7 @@ const appData = {
       id: 1,
       name: "Fresh Bananas (4 pieces)",
       category: "fruits",
-      price: 26,
+      price: 40,
       image: "🍌",
       description: "Fresh, ripe bananas perfect for snacking or baking",
       rating: 4.5,
@@ -15,7 +15,7 @@ const appData = {
       id: 2,
       name: "Organic Milk (1/2 litre)",
       category: "dairy",
-      price: 33,
+      price: 60,
       image: "🥛",
       description: "Fresh organic whole milk, 1 gallon",
       rating: 4.7,
@@ -26,7 +26,7 @@ const appData = {
       id: 3,
       name: "Chicken Breast (1 kg)",
       category: "meat",
-      price: 295,
+      price: 320,
       image: "🍗",
       description: "Fresh boneless, skinless chicken breast, 2 lbs",
       rating: 4.3,
@@ -37,7 +37,7 @@ const appData = {
       id: 4,
       name: "Whole Wheat Bread (1 packet)",
       category: "pantry",
-      price: 50,
+      price: 45,
       image: "🍞",
       description: "Freshly baked whole wheat bread loaf",
       rating: 4.4,
@@ -48,7 +48,7 @@ const appData = {
       id: 5,
       name: "Fresh Apples (1 kg)",
       category: "fruits",
-      price: 80,
+      price: 120,
       image: "🍎",
       description: "Crisp Honeycrisp apples, 3 lb bag",
       rating: 4.6,
@@ -59,7 +59,7 @@ const appData = {
       id: 6,
       name: "Greek Yogurt (1 litre)",
       category: "dairy",
-      price: 495,
+      price: 180,
       image: "🥛",
       description: "Plain Greek yogurt, 32 oz container",
       rating: 4.5,
@@ -70,7 +70,7 @@ const appData = {
       id: 7,
       name: "Fresh Spinach (1 bunch)",
       category: "fruits",
-      price: 36,
+      price: 25,
       image: "🥬",
       description: "Fresh baby spinach leaves, 5 oz bag",
       rating: 4.2,
@@ -81,7 +81,7 @@ const appData = {
       id: 8,
       name: "Salmon Fillet (300 g)",
       category: "meat",
-      price: 300,
+      price: 450,
       image: "🐟",
       description: "Fresh Atlantic salmon fillet, 1 lb",
       rating: 4.8,
@@ -96,9 +96,9 @@ const appData = {
     {"name": "Pantry", "id": "pantry"}
   ],
   cartItems: [
-    {id: 2, name: "Organic Milk", price: 33, quantity: 1, image: "🥛"},
-    {id: 1, name: "Fresh Bananas", price: 26, quantity: 2, image: "🍌"},
-    {id: 4, name: "Whole Wheat Bread", price: 50, quantity: 1, image: "🍞"}
+    {id: 2, name: "Organic Milk", price: 60, quantity: 1, image: "🥛"},
+    {id: 1, name: "Fresh Bananas", price: 40, quantity: 2, image: "🍌"},
+    {id: 4, name: "Whole Wheat Bread", price: 45, quantity: 1, image: "🍞"}
   ]
 };
 
@@ -666,7 +666,7 @@ function initializeSampleData() {
         id: 1,
         name: "Fresh Bananas (4 pieces)",
         category: "fruits",
-        price: 26,
+        price: 40,
         stock: 15,
         minStock: 10,
         description: "Fresh, ripe bananas perfect for snacking or baking"
@@ -675,7 +675,7 @@ function initializeSampleData() {
         id: 2,
         name: "Organic Milk (1/2 litre)",
         category: "dairy",
-        price: 33,
+        price: 60,
         stock: 8,
         minStock: 15,
         description: "Fresh organic whole milk"
@@ -684,7 +684,7 @@ function initializeSampleData() {
         id: 3,
         name: "Chicken Breast (1 kg)",
         category: "meat",
-        price: 295,
+        price: 320,
         stock: 12,
         minStock: 8,
         description: "Fresh boneless, skinless chicken breast"
@@ -693,7 +693,7 @@ function initializeSampleData() {
         id: 4,
         name: "Whole Wheat Bread (1 packet)",
         category: "pantry",
-        price: 50,
+        price: 45,
         stock: 22,
         minStock: 5,
         description: "Freshly baked whole wheat bread loaf"
@@ -702,7 +702,7 @@ function initializeSampleData() {
         id: 5,
         name: "Fresh Apples (1 kg)",
         category: "fruits",
-        price: 80,
+        price: 120,
         stock: 18,
         minStock: 10,
         description: "Crisp Honeycrisp apples"
@@ -711,7 +711,7 @@ function initializeSampleData() {
         id: 6,
         name: "Greek Yogurt (1 litre)",
         category: "dairy",
-        price: 495,
+        price: 180,
         stock: 25,
         minStock: 8,
         description: "Plain Greek yogurt"
@@ -720,7 +720,7 @@ function initializeSampleData() {
         id: 7,
         name: "Fresh Spinach (1 bunch)",
         category: "fruits",
-        price: 36,
+        price: 25,
         stock: 20,
         minStock: 12,
         description: "Fresh baby spinach leaves"
@@ -729,7 +729,7 @@ function initializeSampleData() {
         id: 8,
         name: "Salmon Fillet (300 g)",
         category: "meat",
-        price: 300,
+        price: 450,
         stock: 6,
         minStock: 10,
         description: "Fresh Atlantic salmon fillet"

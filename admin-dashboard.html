@@ -60,7 +60,7 @@
                 <div class="stat-card">
                     <div class="stat-icon">💰</div>
                     <div class="stat-content">
-                        <h3 id="totalValue">$0</h3>
+                        <h3 id="totalValue">₹0</h3>
                         <p>Inventory Value</p>
                     </div>
                 </div>
@@ -141,7 +141,7 @@
                     </div>
 
                     <div class="form-group">
-                        <label for="productPrice" class="form-label">Price ($)</label>
+                        <label for="productPrice" class="form-label">Price (₹)</label>
                         <input type="number" id="productPrice" name="productPrice" class="form-control" step="0.01" min="0" required>
                     </div>
 
@@ -239,7 +239,7 @@
                     </td>
                     <td><span class="category-badge category-${product.category}">${product.category}</span></td>
                     <td>${product.stock}</td>
-                    <td>$${product.price.toFixed(2)}</td>
+                    <td>₹${product.price.toFixed(2)}</td>
                     <td><span class="status status--${status.class}">${status.text}</span></td>
                     <td>
                         <button class="btn btn--sm btn--outline" onclick="editProduct(${product.id})">Edit</button>
@@ -273,7 +273,7 @@
             document.getElementById('totalProducts').textContent = totalProducts;
             document.getElementById('lowStockItems').textContent = lowStockItems;
             document.getElementById('outOfStock').textContent = outOfStock;
-            document.getElementById('totalValue').textContent = '$' + totalValue.toFixed(2);
+            document.getElementById('totalValue').textContent = '₹' + totalValue.toFixed(2);
         }
 
         // Show add product modal
